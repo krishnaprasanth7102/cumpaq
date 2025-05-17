@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import './App.css';
 
+
 const App = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeQuestion, setActiveQuestion] = useState(null);
