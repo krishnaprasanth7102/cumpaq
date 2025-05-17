@@ -70,60 +70,101 @@ p {
   font-size: 1.2rem;
 }
 
-/* Navigation */
+/* Navbar Container */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 2rem;
-  background-color: rgba(18, 18, 18, 0.9);
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: blur(10px);
+  font-family: sans-serif;
 }
 
+/* Inner Flex */
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Logo */
 .logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: 1px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffffff;
 }
 
+/* Desktop Links */
 .nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 20px;
 }
 
 .nav-links button {
   background: none;
   border: none;
-  color: var(--white);
+  color: #ffffff;
   font-size: 1rem;
   cursor: pointer;
-  padding: 0.5rem 0;
-  position: relative;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 .nav-links button:hover {
-  color: var(--accent);
+  color: #007bff;
 }
 
-.nav-links button::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--accent);
-  transition: width 0.3s ease;
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
 }
 
-.nav-links button:hover::after {
-  width: 100%;
+/* Mobile Menu */
+.mobile-links {
+  display: none;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+  padding: 10px 20px;
 }
+
+.mobile-links button {
+  background: none;
+  border: none;
+  padding: 10px 0;
+  text-align: left;
+  font-size: 1rem;
+  color: #000000;
+  cursor: pointer;
+}
+
+.mobile-links button:hover {
+  color: #007bff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .mobile-links {
+    display: flex;
+  }
+}
+
+
 
 /* Hero Section */
 .hero {

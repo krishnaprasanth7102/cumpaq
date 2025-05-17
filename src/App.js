@@ -24,17 +24,17 @@ const App = () => {
   };
 
   const services = [
-    'Black & White Printing - $5',
-    'Color Printing - $5',
-    'Lamination - $5',
-    'Spiral Binding - $5',
-    'Typing (English) - $5',
-    'Typing (Malayalam) - $5',
-    'Typing (Hindi) - $5',
-    'Typing (Sanskrit) - $5',
-    'CSC Services - $5',
-    'PSC Registration - $5',
-    'Website Building - $5'
+    'Black & White Printing ',
+    'Color Printing ',
+    'Lamination ',
+    'Spiral Binding ',
+    'Typing (English) ',
+    'Typing (Malayalam) ',
+    'Typing (Hindi) ',
+    'Typing (Sanskrit) ',
+    'CSC Services ',
+    'PSC Registration ',
+    'Website Building '
   ];
 
   const faqs = [
@@ -58,11 +58,14 @@ const App = () => {
 
   return (
     <div className="app">
-      {/* Navigation */}
-      <nav className="navbar">
-        <div className="logo">CUMPAQ</div>
-        
-        {/* Desktop Navigation */}
+ <nav className="deepseek-nav">
+  <div className="nav-container">
+    {/* Brand Logo */}
+    <div className="nav-brand">
+      <div className="logo">CUMPAQ</div>
+    </div>
+
+    {/* Desktop Menu */}
         <div className="nav-links">
           <button onClick={() => scrollTo(homeRef)}>Home</button>
           <button onClick={() => scrollTo(servicesRef)}>Services</button>
@@ -70,30 +73,30 @@ const App = () => {
           <button onClick={() => scrollTo(faqRef)}>FAQ</button>
           <button onClick={() => scrollTo(contactRef)}>Contact</button>
         </div>
-        
-        {/* Mobile Hamburger Menu */}
-        <button className="mobile-menu-button" onClick={toggleMobileMenu}>
-          <div className={`menu-line ${mobileMenuOpen ? 'open' : ''}`}></div>
-          <div className={`menu-line ${mobileMenuOpen ? 'open' : ''}`}></div>
-          <div className={`menu-line ${mobileMenuOpen ? 'open' : ''}`}></div>
+
+        {/* Hamburger Icon */}
+        <button className="hamburger" onClick={toggleMobileMenu}>
+          ☰
         </button>
-        
-        {/* Mobile Navigation Menu */}
-        <div className={`mobile-nav-links ${mobileMenuOpen ? 'open' : ''}`}>
+      </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="mobile-links">
           <button onClick={() => scrollTo(homeRef)}>Home</button>
           <button onClick={() => scrollTo(servicesRef)}>Services</button>
           <button onClick={() => scrollTo(featuresRef)}>Features</button>
           <button onClick={() => scrollTo(faqRef)}>FAQ</button>
           <button onClick={() => scrollTo(contactRef)}>Contact</button>
         </div>
-      </nav>
-
+      )}
+    </nav>
       {/* Hero Section */}
       <section ref={homeRef} className="hero">
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <h1>PRINTING & DIGITAL SERVICES</h1>
-          <p>Professional services at just $5 each</p>
+          <p>Where quality meets affordability</p>
           <button className="cta-button" onClick={() => scrollTo(servicesRef)}>
             Explore Services
           </button>
@@ -123,7 +126,7 @@ const App = () => {
       <section ref={servicesRef} className="services">
         <div className="container">
           <h2>OUR SERVICES</h2>
-          <p className="section-subtitle">All services at just $5 each</p>
+          <p className="section-subtitle">Every service, delivered with trust</p>
           <div className="service-grid">
             {services.map((service, index) => (
               <div className="service-card" key={index}>
@@ -142,7 +145,7 @@ const App = () => {
           <div className="feature-grid">
             <div className="feature-card">
               <h3>Affordable Pricing</h3>
-              <p>All services at just $5 each</p>
+              <p>Reliable services. Trusted by many</p>
             </div>
             <div className="feature-card">
               <h3>Fast Service</h3>
